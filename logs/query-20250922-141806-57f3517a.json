@@ -1,0 +1,102 @@
+{
+  "query": "What new diabetes drugs are available in 2025?",
+  "retrieved": [
+    {
+      "score": 1.05,
+      "source_type": "blogs",
+      "doc_id": "new_diabetes_drugs.md",
+      "chunk_id": "new_diabetes_drugs.md::c0",
+      "rerank_score": 8.919210433959961
+    },
+    {
+      "score": 0.05,
+      "source_type": "blogs",
+      "doc_id": "new_diabetes_drugs.md",
+      "chunk_id": "new_diabetes_drugs.md::c0",
+      "rerank_score": 8.919210433959961
+    },
+    {
+      "score": 1.079807147860338,
+      "source_type": "docs",
+      "doc_id": "diabetes_guidelines.md",
+      "chunk_id": "diabetes_guidelines.md::c0",
+      "rerank_score": -7.001124382019043
+    },
+    {
+      "score": 0.6500000001752999,
+      "source_type": "docs",
+      "doc_id": "hypertension_guidelines.md",
+      "chunk_id": "hypertension_guidelines.md::c2",
+      "rerank_score": -7.023252487182617
+    },
+    {
+      "score": 0.6500000001752999,
+      "source_type": "docs",
+      "doc_id": "diabetes_guidelines.md",
+      "chunk_id": "diabetes_guidelines.md::c2",
+      "rerank_score": -10.324777603149414
+    }
+  ],
+  "contradictions": [
+    [
+      0,
+      3,
+      "contradiction"
+    ],
+    [
+      1,
+      3,
+      "contradiction"
+    ],
+    [
+      2,
+      3,
+      "contradiction"
+    ]
+  ],
+  "resolution": {
+    "decisions": [
+      {
+        "a": "new_diabetes_drugs.md::c0",
+        "b": "hypertension_guidelines.md::c2",
+        "preferred": "hypertension_guidelines.md::c2",
+        "discarded": "new_diabetes_drugs.md::c0",
+        "reason": "Preferred docs over blogs"
+      },
+      {
+        "a": "new_diabetes_drugs.md::c0",
+        "b": "hypertension_guidelines.md::c2",
+        "preferred": "hypertension_guidelines.md::c2",
+        "discarded": "new_diabetes_drugs.md::c0",
+        "reason": "Preferred docs over blogs"
+      },
+      {
+        "a": "diabetes_guidelines.md::c0",
+        "b": "hypertension_guidelines.md::c2",
+        "preferred": "diabetes_guidelines.md::c0",
+        "discarded": "hypertension_guidelines.md::c2",
+        "reason": "Preferred docs over docs"
+      }
+    ]
+  },
+  "answer": {
+    "response": "Based on clinical guidelines and community knowledge: # New Diabetes Drugs in 2025\nRecent studies highlight GLP-1 receptor agonists (like Semaglutide) not only lower blood sugar but also promote weight loss.\nThey are considered after Metformin if HbA1c remains above goal. # New Diabetes Drugs in 2025\nRecent studies highlight GLP-1 receptor agonists (like Semaglutide) not only lower blood sugar but also promote weight loss.\nThey are considered after Metformin if HbA1c remains above goal. # Type 2 Diabetes Guidelines\nFirst-line treatment for type 2 diabetes is **Metformin**, unless contraindicated.\n\n⚠️ Disclaimer: This is not medical advice. Please consult a healthcare professional.",
+    "citations": [
+      {
+        "source": "blogs",
+        "doc": "new_diabetes_drugs.md",
+        "chunk": "new_diabetes_drugs.md::c0"
+      },
+      {
+        "source": "blogs",
+        "doc": "new_diabetes_drugs.md",
+        "chunk": "new_diabetes_drugs.md::c0"
+      },
+      {
+        "source": "docs",
+        "doc": "diabetes_guidelines.md",
+        "chunk": "diabetes_guidelines.md::c0"
+      }
+    ]
+  }
+}

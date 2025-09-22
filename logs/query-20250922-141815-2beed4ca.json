@@ -1,0 +1,78 @@
+{
+  "query": "What are the symptoms of asthma?",
+  "retrieved": [
+    {
+      "score": 1.15,
+      "source_type": "docs",
+      "doc_id": "asthma_guidelines.md",
+      "chunk_id": "asthma_guidelines.md::c1",
+      "rerank_score": -0.4094661474227905
+    },
+    {
+      "score": 0.6500000001724203,
+      "source_type": "docs",
+      "doc_id": "asthma_guidelines.md",
+      "chunk_id": "asthma_guidelines.md::c0",
+      "rerank_score": -0.5325984954833984
+    },
+    {
+      "score": 0.7790368272716646,
+      "source_type": "forums",
+      "doc_id": "f1001",
+      "chunk_id": "f1001::op+top2",
+      "rerank_score": -10.714338302612305
+    },
+    {
+      "score": 0.5000000001724203,
+      "source_type": "forums",
+      "doc_id": "f1003",
+      "chunk_id": "f1003::op+top1",
+      "rerank_score": -10.995073318481445
+    },
+    {
+      "score": 0.5500000001724203,
+      "source_type": "blogs",
+      "doc_id": "lifestyle_hypertension.md",
+      "chunk_id": "lifestyle_hypertension.md::c0",
+      "rerank_score": -11.096917152404785
+    }
+  ],
+  "contradictions": [
+    [
+      2,
+      3,
+      "contradiction"
+    ]
+  ],
+  "resolution": {
+    "decisions": [
+      {
+        "a": "f1001::op+top2",
+        "b": "f1003::op+top1",
+        "preferred": "f1001::op+top2",
+        "discarded": "f1003::op+top1",
+        "reason": "Preferred forums over forums"
+      }
+    ]
+  },
+  "answer": {
+    "response": "Based on clinical guidelines and community knowledge: ## Diagnosis\nSymptoms: wheezing, shortness of breath, chest tightness. # Asthma Guidelines\nAsthma is a chronic inflammatory airway disease. OP: I just started Metformin and I'm having stomach upset. Is this normal?\nReply: Yes, it's a common side effect at the beginning.\nReply: My doctor told me it usually improves after a few weeks.\n\n⚠️ Disclaimer: This is not medical advice. Please consult a healthcare professional.",
+    "citations": [
+      {
+        "source": "docs",
+        "doc": "asthma_guidelines.md",
+        "chunk": "asthma_guidelines.md::c1"
+      },
+      {
+        "source": "docs",
+        "doc": "asthma_guidelines.md",
+        "chunk": "asthma_guidelines.md::c0"
+      },
+      {
+        "source": "forums",
+        "doc": "f1001",
+        "chunk": "f1001::op+top2"
+      }
+    ]
+  }
+}

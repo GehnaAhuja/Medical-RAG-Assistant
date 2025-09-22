@@ -1,0 +1,102 @@
+{
+  "query": "How should mild asthma be treated?",
+  "retrieved": [
+    {
+      "score": 0.650000000128449,
+      "source_type": "docs",
+      "doc_id": "asthma_guidelines.md",
+      "chunk_id": "asthma_guidelines.md::c0",
+      "rerank_score": -4.189994812011719
+    },
+    {
+      "score": 0.650000000128449,
+      "source_type": "docs",
+      "doc_id": "asthma_guidelines.md",
+      "chunk_id": "asthma_guidelines.md::c2",
+      "rerank_score": -8.174185752868652
+    },
+    {
+      "score": 1.15,
+      "source_type": "docs",
+      "doc_id": "diabetes_guidelines.md",
+      "chunk_id": "diabetes_guidelines.md::c1",
+      "rerank_score": -10.862442016601562
+    },
+    {
+      "score": 0.650000000128449,
+      "source_type": "docs",
+      "doc_id": "diabetes_guidelines.md",
+      "chunk_id": "diabetes_guidelines.md::c0",
+      "rerank_score": -10.863513946533203
+    },
+    {
+      "score": 0.98338466124854,
+      "source_type": "forums",
+      "doc_id": "f1003",
+      "chunk_id": "f1003::op+top1",
+      "rerank_score": -10.896507263183594
+    }
+  ],
+  "contradictions": [
+    [
+      0,
+      2,
+      "contradiction"
+    ],
+    [
+      0,
+      3,
+      "contradiction"
+    ],
+    [
+      1,
+      2,
+      "contradiction"
+    ]
+  ],
+  "resolution": {
+    "decisions": [
+      {
+        "a": "asthma_guidelines.md::c0",
+        "b": "diabetes_guidelines.md::c1",
+        "preferred": "asthma_guidelines.md::c0",
+        "discarded": "diabetes_guidelines.md::c1",
+        "reason": "Preferred docs over docs"
+      },
+      {
+        "a": "asthma_guidelines.md::c0",
+        "b": "diabetes_guidelines.md::c0",
+        "preferred": "asthma_guidelines.md::c0",
+        "discarded": "diabetes_guidelines.md::c0",
+        "reason": "Preferred docs over docs"
+      },
+      {
+        "a": "asthma_guidelines.md::c2",
+        "b": "diabetes_guidelines.md::c1",
+        "preferred": "asthma_guidelines.md::c2",
+        "discarded": "diabetes_guidelines.md::c1",
+        "reason": "Preferred docs over docs"
+      }
+    ]
+  },
+  "answer": {
+    "response": "Based on clinical guidelines and community knowledge: # Asthma Guidelines\nAsthma is a chronic inflammatory airway disease. ## Management\n- Mild: Low-dose inhaled corticosteroids\n- Moderate: Add long-acting beta agonist (LABA)\n- Severe: Consider biologic therapy ## Lifestyle\nPatients should be encouraged to adopt healthy diet and exercise.\n\n⚠️ Disclaimer: This is not medical advice. Please consult a healthcare professional.",
+    "citations": [
+      {
+        "source": "docs",
+        "doc": "asthma_guidelines.md",
+        "chunk": "asthma_guidelines.md::c0"
+      },
+      {
+        "source": "docs",
+        "doc": "asthma_guidelines.md",
+        "chunk": "asthma_guidelines.md::c2"
+      },
+      {
+        "source": "docs",
+        "doc": "diabetes_guidelines.md",
+        "chunk": "diabetes_guidelines.md::c1"
+      }
+    ]
+  }
+}

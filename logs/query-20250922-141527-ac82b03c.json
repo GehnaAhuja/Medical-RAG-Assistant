@@ -1,0 +1,102 @@
+{
+  "query": "Are beta blockers first line for hypertension?",
+  "retrieved": [
+    {
+      "score": 0.6500000002249341,
+      "source_type": "docs",
+      "doc_id": "hypertension_guidelines.md",
+      "chunk_id": "hypertension_guidelines.md::c2",
+      "rerank_score": -2.3846850395202637
+    },
+    {
+      "score": 1.0539680202411708,
+      "source_type": "docs",
+      "doc_id": "diabetes_guidelines.md",
+      "chunk_id": "diabetes_guidelines.md::c0",
+      "rerank_score": -6.656369209289551
+    },
+    {
+      "score": 0.6500000002249341,
+      "source_type": "docs",
+      "doc_id": "hypertension_guidelines.md",
+      "chunk_id": "hypertension_guidelines.md::c0",
+      "rerank_score": -9.757477760314941
+    },
+    {
+      "score": 0.8712441936166856,
+      "source_type": "blogs",
+      "doc_id": "lifestyle_hypertension.md",
+      "chunk_id": "lifestyle_hypertension.md::c0",
+      "rerank_score": -10.671164512634277
+    },
+    {
+      "score": 1.15,
+      "source_type": "docs",
+      "doc_id": "asthma_guidelines.md",
+      "chunk_id": "asthma_guidelines.md::c2",
+      "rerank_score": -10.727743148803711
+    }
+  ],
+  "contradictions": [
+    [
+      0,
+      1,
+      "contradiction"
+    ],
+    [
+      0,
+      3,
+      "contradiction"
+    ],
+    [
+      1,
+      2,
+      "contradiction"
+    ]
+  ],
+  "resolution": {
+    "decisions": [
+      {
+        "a": "hypertension_guidelines.md::c2",
+        "b": "diabetes_guidelines.md::c0",
+        "preferred": "hypertension_guidelines.md::c2",
+        "discarded": "diabetes_guidelines.md::c0",
+        "reason": "Preferred docs over docs"
+      },
+      {
+        "a": "hypertension_guidelines.md::c2",
+        "b": "lifestyle_hypertension.md::c0",
+        "preferred": "hypertension_guidelines.md::c2",
+        "discarded": "lifestyle_hypertension.md::c0",
+        "reason": "Preferred docs over blogs"
+      },
+      {
+        "a": "diabetes_guidelines.md::c0",
+        "b": "hypertension_guidelines.md::c0",
+        "preferred": "diabetes_guidelines.md::c0",
+        "discarded": "hypertension_guidelines.md::c0",
+        "reason": "Preferred docs over docs"
+      }
+    ]
+  },
+  "answer": {
+    "response": "Based on clinical guidelines and community knowledge: ## Medications\nFirst-line medications: ACE inhibitors, ARBs, calcium channel blockers, or thiazide diuretics. # Type 2 Diabetes Guidelines\nFirst-line treatment for type 2 diabetes is **Metformin**, unless contraindicated. # Hypertension Management\nHypertension is diagnosed when blood pressure is consistently ≥ 140/90 mmHg.\n\n⚠️ Disclaimer: This is not medical advice. Please consult a healthcare professional.",
+    "citations": [
+      {
+        "source": "docs",
+        "doc": "hypertension_guidelines.md",
+        "chunk": "hypertension_guidelines.md::c2"
+      },
+      {
+        "source": "docs",
+        "doc": "diabetes_guidelines.md",
+        "chunk": "diabetes_guidelines.md::c0"
+      },
+      {
+        "source": "docs",
+        "doc": "hypertension_guidelines.md",
+        "chunk": "hypertension_guidelines.md::c0"
+      }
+    ]
+  }
+}
