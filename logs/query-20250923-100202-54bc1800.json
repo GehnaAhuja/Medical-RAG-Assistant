@@ -1,0 +1,90 @@
+{
+  "query": "Are NSAIDs harmful for kidneys?",
+  "retrieved": [
+    {
+      "score": 1.0,
+      "source_type": "forums",
+      "doc_id": "f1006",
+      "chunk_id": "f1006::op+top1",
+      "rerank_score": 8.194692611694336
+    },
+    {
+      "score": 0.3303840272362807,
+      "source_type": "forums",
+      "doc_id": "f1004",
+      "chunk_id": "f1004::op+top2",
+      "rerank_score": -4.006082057952881
+    },
+    {
+      "score": 0.3312524539364238,
+      "source_type": "blogs",
+      "doc_id": "ckd_treatment_updates.md",
+      "chunk_id": "ckd_treatment_updates.md::c0",
+      "rerank_score": -6.540599822998047
+    },
+    {
+      "score": 0.18100078067416825,
+      "source_type": "blogs",
+      "doc_id": "new_diabetes_drugs.md",
+      "chunk_id": "new_diabetes_drugs.md::c0",
+      "rerank_score": -10.73649787902832
+    },
+    {
+      "score": 0.18867318276352818,
+      "source_type": "blogs",
+      "doc_id": "obesity_trends.md",
+      "chunk_id": "obesity_trends.md::c0",
+      "rerank_score": -10.778104782104492
+    }
+  ],
+  "contradictions": [
+    [
+      0,
+      1,
+      "contradiction"
+    ],
+    [
+      2,
+      3,
+      "contradiction"
+    ]
+  ],
+  "resolution": {
+    "decisions": [
+      {
+        "a": "f1006::op+top1",
+        "b": "f1004::op+top2",
+        "preferred": "f1006::op+top1",
+        "discarded": "f1004::op+top2",
+        "reason": "Preferred forums over forums"
+      },
+      {
+        "a": "ckd_treatment_updates.md::c0",
+        "b": "new_diabetes_drugs.md::c0",
+        "preferred": "ckd_treatment_updates.md::c0",
+        "discarded": "new_diabetes_drugs.md::c0",
+        "reason": "Preferred blogs over blogs"
+      }
+    ]
+  },
+  "answer": {
+    "response": "Yes, NSAIDs like ibuprofen can worsen kidney function.\n\n⚠️ Disclaimer: This is not medical advice.",
+    "citations": [
+      {
+        "source": "forums",
+        "doc": "f1006",
+        "chunk": "f1006::op+top1"
+      },
+      {
+        "source": "forums",
+        "doc": "f1004",
+        "chunk": "f1004::op+top2"
+      },
+      {
+        "source": "blogs",
+        "doc": "ckd_treatment_updates.md",
+        "chunk": "ckd_treatment_updates.md::c0"
+      }
+    ]
+  }
+}

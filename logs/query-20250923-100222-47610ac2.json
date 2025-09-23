@@ -1,0 +1,102 @@
+{
+  "query": "What medicines help with weight loss in obesity?",
+  "retrieved": [
+    {
+      "score": 0.8643647282213274,
+      "source_type": "blogs",
+      "doc_id": "obesity_trends.md",
+      "chunk_id": "obesity_trends.md::c0",
+      "rerank_score": 5.279356002807617
+    },
+    {
+      "score": 0.7529952320250698,
+      "source_type": "blogs",
+      "doc_id": "new_diabetes_drugs.md",
+      "chunk_id": "new_diabetes_drugs.md::c0",
+      "rerank_score": 1.1894898414611816
+    },
+    {
+      "score": 0.7678615986610524,
+      "source_type": "forums",
+      "doc_id": "f1005",
+      "chunk_id": "f1005::op+top2",
+      "rerank_score": 0.718254566192627
+    },
+    {
+      "score": 0.449879846115828,
+      "source_type": "docs",
+      "doc_id": "hypertension_guidelines.md",
+      "chunk_id": "hypertension_guidelines.md::c2",
+      "rerank_score": -3.8561625480651855
+    },
+    {
+      "score": 0.36600410381368753,
+      "source_type": "docs",
+      "doc_id": "obesity_guidelines.md",
+      "chunk_id": "obesity_guidelines.md::c0",
+      "rerank_score": -6.151947021484375
+    }
+  ],
+  "contradictions": [
+    [
+      1,
+      3,
+      "contradiction"
+    ],
+    [
+      1,
+      4,
+      "contradiction"
+    ],
+    [
+      3,
+      4,
+      "contradiction"
+    ]
+  ],
+  "resolution": {
+    "decisions": [
+      {
+        "a": "new_diabetes_drugs.md::c0",
+        "b": "hypertension_guidelines.md::c2",
+        "preferred": "hypertension_guidelines.md::c2",
+        "discarded": "new_diabetes_drugs.md::c0",
+        "reason": "Preferred docs over blogs"
+      },
+      {
+        "a": "new_diabetes_drugs.md::c0",
+        "b": "obesity_guidelines.md::c0",
+        "preferred": "obesity_guidelines.md::c0",
+        "discarded": "new_diabetes_drugs.md::c0",
+        "reason": "Preferred docs over blogs"
+      },
+      {
+        "a": "hypertension_guidelines.md::c2",
+        "b": "obesity_guidelines.md::c0",
+        "preferred": "hypertension_guidelines.md::c2",
+        "discarded": "obesity_guidelines.md::c0",
+        "reason": "Preferred docs over docs"
+      }
+    ]
+  },
+  "answer": {
+    "response": "ACE inhibitors, ARBs, calcium channel blockers, or thiazide diuretics\n\n⚠️ Disclaimer: This is not medical advice.",
+    "citations": [
+      {
+        "source": "blogs",
+        "doc": "obesity_trends.md",
+        "chunk": "obesity_trends.md::c0"
+      },
+      {
+        "source": "blogs",
+        "doc": "new_diabetes_drugs.md",
+        "chunk": "new_diabetes_drugs.md::c0"
+      },
+      {
+        "source": "forums",
+        "doc": "f1005",
+        "chunk": "f1005::op+top2"
+      }
+    ]
+  }
+}

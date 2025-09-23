@@ -1,5 +1,6 @@
 from typing import List, Dict
 import os
+from transformers import pipeline
 
 from .chunking import chunk_docs, chunk_forums, chunk_blogs
 from .indexer import HybridIndex
@@ -20,7 +21,7 @@ class RAGPipeline:
     - Logs everything to JSON
     """
 
-    def __init__(self, data_root: str, log_dir: str, device: str = "cpu"):
+    def __init__(self, data_root: str, log_dir: str, device: str = "cuda"):
         self.logger = JsonLogger(log_dir)
 
         # ---------------------------
@@ -48,6 +49,12 @@ class RAGPipeline:
         # ---------------------------
         self.contra = ContradictionResolver(device=device)
 
+        self.generator = pipeline(
+            "text2text-generation",
+            model="google/flan-t5-base",   # or mistral-7b if you have GPU
+            device=0 if device=="cuda" else -1
+        )
+
     # ---------------------------
     # Answer a query
     # ---------------------------
@@ -55,6 +62,17 @@ class RAGPipeline:
         # 1. Retrieve + rerank
         candidates = self.retriever.search(query, top_k=max(top_k * 3, 10))
         reranked = self.reranker.rerank(query, candidates, top_k=top_k)
+
+        if not reranked or reranked[0]["rerank_score"] < 0.3:
+            return {
+                "response": "Sorry, I don’t have enough reliable information in my knowledge sources to answer this question.",
+                "citations": [],
+                "log_file": self.logger.log({
+                    "query": query,
+                    "retrieved": [],
+                    "answer": "No relevant answer found"
+                })
+            }
 
         # 2. Check contradictions
         pairs = self.contra.detect_pairs(reranked)
@@ -82,16 +100,17 @@ class RAGPipeline:
     # ---------------------------
     # Simple synthesis (stub)
     # ---------------------------
-    def _synthesize(self, query: str, chunks: List[Dict], resolution: Dict) -> Dict:
-        cites = []
-        textbits = []
-        for c in chunks[:3]:
-            cites.append({"source": c["source_type"], "doc": c["doc_id"], "chunk": c["chunk_id"]})
-            textbits.append(c["text"])
+    def _synthesize(self, query, chunks, resolution):
+        context = "\n\n".join(c["text"] for c in chunks[:5])
+        prompt = f"Answer the medical question based only on the following context:\n\n{context}\n\nQuestion: {query}\nAnswer:"
 
-        # Very naive answer generation
-        body = " ".join(textbits)
+        gen = self.generator(prompt, max_length=256, do_sample=False)
+        answer = gen[0]["generated_text"]
+
         return {
-            "response": f"Based on clinical guidelines and community knowledge: {body}\n\n⚠️ Disclaimer: This is not medical advice. Please consult a healthcare professional.",
-            "citations": cites,
+            "response": answer + "\n\n⚠️ Disclaimer: This is not medical advice.",
+            "citations": [
+                {"source": c["source_type"], "doc": c["doc_id"], "chunk": c["chunk_id"]}
+                for c in chunks[:3]
+            ],
         }

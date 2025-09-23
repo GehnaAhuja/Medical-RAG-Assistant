@@ -1,0 +1,64 @@
+{
+  "query": "Can Metformin cause stomach upset?",
+  "retrieved": [
+    {
+      "score": 1.0,
+      "source_type": "forums",
+      "doc_id": "f1001",
+      "chunk_id": "f1001::op+top2",
+      "rerank_score": 8.513162612915039
+    },
+    {
+      "score": 0.650000000178331,
+      "source_type": "docs",
+      "doc_id": "diabetes_guidelines.md",
+      "chunk_id": "diabetes_guidelines.md::c2",
+      "rerank_score": -5.403904438018799
+    },
+    {
+      "score": 0.7650527943085346,
+      "source_type": "blogs",
+      "doc_id": "new_diabetes_drugs.md",
+      "chunk_id": "new_diabetes_drugs.md::c0",
+      "rerank_score": -5.755917549133301
+    },
+    {
+      "score": 0.05,
+      "source_type": "blogs",
+      "doc_id": "new_diabetes_drugs.md",
+      "chunk_id": "new_diabetes_drugs.md::c0",
+      "rerank_score": -5.755917549133301
+    },
+    {
+      "score": 0.650000000178331,
+      "source_type": "docs",
+      "doc_id": "diabetes_guidelines.md",
+      "chunk_id": "diabetes_guidelines.md::c0",
+      "rerank_score": -5.940398216247559
+    }
+  ],
+  "contradictions": [],
+  "resolution": {
+    "decisions": []
+  },
+  "answer": {
+    "response": "Yes, it's a common side effect at the beginning.\n\n⚠️ Disclaimer: This is not medical advice.",
+    "citations": [
+      {
+        "source": "forums",
+        "doc": "f1001",
+        "chunk": "f1001::op+top2"
+      },
+      {
+        "source": "docs",
+        "doc": "diabetes_guidelines.md",
+        "chunk": "diabetes_guidelines.md::c2"
+      },
+      {
+        "source": "blogs",
+        "doc": "new_diabetes_drugs.md",
+        "chunk": "new_diabetes_drugs.md::c0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "query": "What are the new drugs for CKD in 2025?",
+  "retrieved": [
+    {
+      "score": 0.4737565053596565,
+      "source_type": "blogs",
+      "doc_id": "new_diabetes_drugs.md",
+      "chunk_id": "new_diabetes_drugs.md::c0",
+      "rerank_score": 5.135680198669434
+    },
+    {
+      "score": 0.9783112847580326,
+      "source_type": "blogs",
+      "doc_id": "ckd_treatment_updates.md",
+      "chunk_id": "ckd_treatment_updates.md::c0",
+      "rerank_score": 4.458676338195801
+    },
+    {
+      "score": 0.42566205475568436,
+      "source_type": "blogs",
+      "doc_id": "obesity_trends.md",
+      "chunk_id": "obesity_trends.md::c0",
+      "rerank_score": -1.246741771697998
+    },
+    {
+      "score": 0.5593688345950152,
+      "source_type": "forums",
+      "doc_id": "f1004",
+      "chunk_id": "f1004::op+top2",
+      "rerank_score": -2.618511915206909
+    },
+    {
+      "score": 0.6500000000734848,
+      "source_type": "docs",
+      "doc_id": "hypertension_guidelines.md",
+      "chunk_id": "hypertension_guidelines.md::c2",
+      "rerank_score": -7.240506172180176
+    }
+  ],
+  "contradictions": [
+    [
+      0,
+      4,
+      "contradiction"
+    ]
+  ],
+  "resolution": {
+    "decisions": [
+      {
+        "a": "new_diabetes_drugs.md::c0",
+        "b": "hypertension_guidelines.md::c2",
+        "preferred": "hypertension_guidelines.md::c2",
+        "discarded": "new_diabetes_drugs.md::c0",
+        "reason": "Preferred docs over blogs"
+      }
+    ]
+  },
+  "answer": {
+    "response": "SGLT2 inhibitors\n\n⚠️ Disclaimer: This is not medical advice.",
+    "citations": [
+      {
+        "source": "blogs",
+        "doc": "new_diabetes_drugs.md",
+        "chunk": "new_diabetes_drugs.md::c0"
+      },
+      {
+        "source": "blogs",
+        "doc": "ckd_treatment_updates.md",
+        "chunk": "ckd_treatment_updates.md::c0"
+      },
+      {
+        "source": "blogs",
+        "doc": "obesity_trends.md",
+        "chunk": "obesity_trends.md::c0"
+      }
+    ]
+  }
+}

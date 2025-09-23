@@ -1,0 +1,78 @@
+{
+  "query": "How often should I use my rescue inhaler for asthma?",
+  "retrieved": [
+    {
+      "score": 1.0,
+      "source_type": "forums",
+      "doc_id": "f1003",
+      "chunk_id": "f1003::op+top1",
+      "rerank_score": 6.295718193054199
+    },
+    {
+      "score": 0.41975514293798377,
+      "source_type": "docs",
+      "doc_id": "asthma_guidelines.md",
+      "chunk_id": "asthma_guidelines.md::c0",
+      "rerank_score": -8.26821231842041
+    },
+    {
+      "score": 0.3305164257391265,
+      "source_type": "docs",
+      "doc_id": "asthma_guidelines.md",
+      "chunk_id": "asthma_guidelines.md::c2",
+      "rerank_score": -10.667312622070312
+    },
+    {
+      "score": 0.2539805272473056,
+      "source_type": "docs",
+      "doc_id": "asthma_guidelines.md",
+      "chunk_id": "asthma_guidelines.md::c1",
+      "rerank_score": -10.999980926513672
+    },
+    {
+      "score": 0.2671297131747682,
+      "source_type": "docs",
+      "doc_id": "diabetes_guidelines.md",
+      "chunk_id": "diabetes_guidelines.md::c2",
+      "rerank_score": -11.071313858032227
+    }
+  ],
+  "contradictions": [
+    [
+      2,
+      3,
+      "contradiction"
+    ]
+  ],
+  "resolution": {
+    "decisions": [
+      {
+        "a": "asthma_guidelines.md::c2",
+        "b": "asthma_guidelines.md::c1",
+        "preferred": "asthma_guidelines.md::c2",
+        "discarded": "asthma_guidelines.md::c1",
+        "reason": "Preferred docs over docs"
+      }
+    ]
+  },
+  "answer": {
+    "response": "Only when you have symptoms\n\n⚠️ Disclaimer: This is not medical advice.",
+    "citations": [
+      {
+        "source": "forums",
+        "doc": "f1003",
+        "chunk": "f1003::op+top1"
+      },
+      {
+        "source": "docs",
+        "doc": "asthma_guidelines.md",
+        "chunk": "asthma_guidelines.md::c0"
+      },
+      {
+        "source": "docs",
+        "doc": "asthma_guidelines.md",
+        "chunk": "asthma_guidelines.md::c2"
+      }
+    ]
+  }
+}
