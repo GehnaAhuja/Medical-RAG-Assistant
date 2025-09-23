@@ -13,7 +13,7 @@ This project demonstrates **multi-source retrieval, reranking, contradiction han
 git clone https://github.com/yourusername/medical-rag-assistant.git
 cd medical-rag-assistant
 pip install -r requirements.txt
-streamlit run app.py
+streamlit run app.py --server.fileWatcherType none
 ## To Evaluate
 python -m src.evaluate --root data --device cpu
 ```
