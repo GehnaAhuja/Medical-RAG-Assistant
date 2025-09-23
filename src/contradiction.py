@@ -69,3 +69,9 @@ class ContradictionResolver:
             )
 
         return {"decisions": decisions}
+    
+    def simple_contradiction(a: str, b: str) -> bool:
+        
+        neg_terms = ["not", "never", "no longer", "contraindicated"]
+        
+        return any(term in a.lower() for term in neg_terms) != any(term in b.lower() for term in neg_terms)

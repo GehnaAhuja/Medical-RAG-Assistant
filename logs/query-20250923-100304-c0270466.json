@@ -1,0 +1,78 @@
+{
+  "query": "What are the 2025 trends in obesity management?",
+  "retrieved": [
+    {
+      "score": 0.9841142897451762,
+      "source_type": "blogs",
+      "doc_id": "obesity_trends.md",
+      "chunk_id": "obesity_trends.md::c0",
+      "rerank_score": 9.151971817016602
+    },
+    {
+      "score": 0.6048393386093152,
+      "source_type": "docs",
+      "doc_id": "obesity_guidelines.md",
+      "chunk_id": "obesity_guidelines.md::c0",
+      "rerank_score": -2.977869987487793
+    },
+    {
+      "score": 0.6730043024610693,
+      "source_type": "blogs",
+      "doc_id": "new_diabetes_drugs.md",
+      "chunk_id": "new_diabetes_drugs.md::c0",
+      "rerank_score": -3.674368381500244
+    },
+    {
+      "score": 0.5986718108168669,
+      "source_type": "docs",
+      "doc_id": "hypertension_guidelines.md",
+      "chunk_id": "hypertension_guidelines.md::c1",
+      "rerank_score": -9.484737396240234
+    },
+    {
+      "score": 0.6500000000914086,
+      "source_type": "docs",
+      "doc_id": "diabetes_guidelines.md",
+      "chunk_id": "diabetes_guidelines.md::c1",
+      "rerank_score": -11.05936050415039
+    }
+  ],
+  "contradictions": [
+    [
+      2,
+      4,
+      "contradiction"
+    ]
+  ],
+  "resolution": {
+    "decisions": [
+      {
+        "a": "new_diabetes_drugs.md::c0",
+        "b": "diabetes_guidelines.md::c1",
+        "preferred": "diabetes_guidelines.md::c1",
+        "discarded": "new_diabetes_drugs.md::c0",
+        "reason": "Preferred docs over blogs"
+      }
+    ]
+  },
+  "answer": {
+    "response": "The rise of GLP-1 receptor agonists (Semaglutide, Tirzepatide) is reshaping obesity treatment. Patients not only lose weight but also see improvements in cardiovascular risk factors.\n\n⚠️ Disclaimer: This is not medical advice.",
+    "citations": [
+      {
+        "source": "blogs",
+        "doc": "obesity_trends.md",
+        "chunk": "obesity_trends.md::c0"
+      },
+      {
+        "source": "docs",
+        "doc": "obesity_guidelines.md",
+        "chunk": "obesity_guidelines.md::c0"
+      },
+      {
+        "source": "blogs",
+        "doc": "new_diabetes_drugs.md",
+        "chunk": "new_diabetes_drugs.md::c0"
+      }
+    ]
+  }
+}

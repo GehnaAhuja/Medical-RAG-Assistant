@@ -1,0 +1,78 @@
+{
+  "query": "What are lifestyle recommendations for high blood pressure?",
+  "retrieved": [
+    {
+      "score": 1.05,
+      "source_type": "blogs",
+      "doc_id": "lifestyle_hypertension.md",
+      "chunk_id": "lifestyle_hypertension.md::c0",
+      "rerank_score": 5.474205017089844
+    },
+    {
+      "score": 0.8596004054585884,
+      "source_type": "docs",
+      "doc_id": "hypertension_guidelines.md",
+      "chunk_id": "hypertension_guidelines.md::c0",
+      "rerank_score": -6.447347640991211
+    },
+    {
+      "score": 0.3591670679091393,
+      "source_type": "docs",
+      "doc_id": "diabetes_guidelines.md",
+      "chunk_id": "diabetes_guidelines.md::c1",
+      "rerank_score": -7.196171760559082
+    },
+    {
+      "score": 0.47296525504566733,
+      "source_type": "docs",
+      "doc_id": "hypertension_guidelines.md",
+      "chunk_id": "hypertension_guidelines.md::c1",
+      "rerank_score": -8.301132202148438
+    },
+    {
+      "score": 0.6950500167649418,
+      "source_type": "forums",
+      "doc_id": "f1002",
+      "chunk_id": "f1002::op+top2",
+      "rerank_score": -8.527351379394531
+    }
+  ],
+  "contradictions": [
+    [
+      1,
+      3,
+      "contradiction"
+    ]
+  ],
+  "resolution": {
+    "decisions": [
+      {
+        "a": "hypertension_guidelines.md::c0",
+        "b": "hypertension_guidelines.md::c1",
+        "preferred": "hypertension_guidelines.md::c0",
+        "discarded": "hypertension_guidelines.md::c1",
+        "reason": "Preferred docs over docs"
+      }
+    ]
+  },
+  "answer": {
+    "response": "## Lifestyle Changes for Hypertension Lifestyle measures can reduce blood pressure by 5-10 mmHg. These include reducing salt, losing weight, exercising regularly, and managing stress. # Hypertension Management Hypertension is diagnosed when blood pressure is consistently  140/90 mmHg. ## Lifestyle Patients should be encouraged to adopt healthy diet and exercise. ## Lifestyle - Reduce salt intake - Increase physical activity - Weight management\n\n⚠️ Disclaimer: This is not medical advice.",
+    "citations": [
+      {
+        "source": "blogs",
+        "doc": "lifestyle_hypertension.md",
+        "chunk": "lifestyle_hypertension.md::c0"
+      },
+      {
+        "source": "docs",
+        "doc": "hypertension_guidelines.md",
+        "chunk": "hypertension_guidelines.md::c0"
+      },
+      {
+        "source": "docs",
+        "doc": "diabetes_guidelines.md",
+        "chunk": "diabetes_guidelines.md::c1"
+      }
+    ]
+  }
+}

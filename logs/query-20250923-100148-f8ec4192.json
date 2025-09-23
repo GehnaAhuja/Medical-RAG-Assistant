@@ -1,0 +1,64 @@
+{
+  "query": "Why is my blood pressure high at home but normal at clinic?",
+  "retrieved": [
+    {
+      "score": 1.0,
+      "source_type": "forums",
+      "doc_id": "f1002",
+      "chunk_id": "f1002::op+top2",
+      "rerank_score": 5.3662614822387695
+    },
+    {
+      "score": 0.6782834840183294,
+      "source_type": "docs",
+      "doc_id": "hypertension_guidelines.md",
+      "chunk_id": "hypertension_guidelines.md::c0",
+      "rerank_score": -6.099339485168457
+    },
+    {
+      "score": 0.4937282515694829,
+      "source_type": "blogs",
+      "doc_id": "lifestyle_hypertension.md",
+      "chunk_id": "lifestyle_hypertension.md::c0",
+      "rerank_score": -8.483670234680176
+    },
+    {
+      "score": 0.16996293392638645,
+      "source_type": "forums",
+      "doc_id": "f1004",
+      "chunk_id": "f1004::op+top2",
+      "rerank_score": -10.526412963867188
+    },
+    {
+      "score": 0.20970270838117153,
+      "source_type": "docs",
+      "doc_id": "asthma_guidelines.md",
+      "chunk_id": "asthma_guidelines.md::c1",
+      "rerank_score": -10.769561767578125
+    }
+  ],
+  "contradictions": [],
+  "resolution": {
+    "decisions": []
+  },
+  "answer": {
+    "response": "White coat hypertension\n\n⚠️ Disclaimer: This is not medical advice.",
+    "citations": [
+      {
+        "source": "forums",
+        "doc": "f1002",
+        "chunk": "f1002::op+top2"
+      },
+      {
+        "source": "docs",
+        "doc": "hypertension_guidelines.md",
+        "chunk": "hypertension_guidelines.md::c0"
+      },
+      {
+        "source": "blogs",
+        "doc": "lifestyle_hypertension.md",
+        "chunk": "lifestyle_hypertension.md::c0"
+      }
+    ]
+  }
+}

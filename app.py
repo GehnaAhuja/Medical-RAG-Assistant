@@ -2,7 +2,7 @@ import streamlit as st
 from src.rag_pipeline import RAGPipeline
 
 # ---------------------------
-# Initialize pipeline once
+# Initialize pipeline
 # ---------------------------
 @st.cache_resource
 def load_pipeline():
@@ -11,26 +11,62 @@ def load_pipeline():
 rag = load_pipeline()
 
 # ---------------------------
-# Streamlit UI
+# Page Config
 # ---------------------------
-st.set_page_config(page_title="Medical RAG Assistant", page_icon="⚕️")
+st.set_page_config(page_title="Medical RAG Assistant", page_icon="⚕️", layout="wide")
 
 st.title("⚕️ Medical RAG Assistant")
-st.write("Ask a health-related question. Sources: clinical docs, patient forums, medical blogs.")
-st.info("⚠️ Disclaimer: This system is for educational purposes only. Not medical advice.")
+st.caption("Ask health-related questions. Sources: clinical docs, patient forums, blogs.")
+st.info("⚠️ Disclaimer: This demo is for educational purposes only. Not medical advice.")
 
-query = st.text_input("Enter your medical question:")
+# ---------------------------
+# Session State for Chat
+# ---------------------------
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 
-if st.button("Ask") or query:
-    if query.strip():
-        with st.spinner("Retrieving and analyzing..."):
-            result = rag.answer(query, top_k=5)
+# ---------------------------
+# Display chat messages
+# ---------------------------
+for msg in st.session_state.messages:
+    if msg["role"] == "user":
+        with st.chat_message("user"):
+            st.markdown(msg["content"])
+    elif msg["role"] == "assistant":
+        with st.chat_message("assistant"):
+            st.markdown(msg["content"])
+            # Show citations if available
+            if "citations" in msg:
+                with st.expander("📚 Citations"):
+                    for cite in msg["citations"]:
+                        st.write(f"- **{cite['source']}** → `{cite['doc']}` (chunk: {cite['chunk']})")
+            if "log_file" in msg:
+                st.caption(f"Log file: {msg['log_file']}")
 
-        st.subheader("Answer")
-        st.write(result["response"])
+# ---------------------------
+# Chat input
+# ---------------------------
+if user_input := st.chat_input("Type your question here..."):
+    # Display user message
+    st.chat_message("user").markdown(user_input)
+    st.session_state.messages.append({"role": "user", "content": user_input})
 
-        st.subheader("Citations")
-        for cite in result["citations"]:
-            st.write(f"- **{cite['source']}** → `{cite['doc']}` (chunk: {cite['chunk']})")
+    # Run pipeline
+    with st.chat_message("assistant"):
+        with st.spinner("Thinking..."):
+            result = rag.answer(user_input, top_k=5)
+            response = result["response"]
 
-        st.caption(f"Log file saved: {result['log_file']}")
+        st.markdown(response)
+        with st.expander("📚 Citations"):
+            for cite in result["citations"]:
+                st.write(f"- **{cite['source']}** → `{cite['doc']}` (chunk: {cite['chunk']})")
+        st.caption(f"Log file: {result['log_file']}")
+
+    # Save assistant message with metadata
+    st.session_state.messages.append({
+        "role": "assistant",
+        "content": response,
+        "citations": result["citations"],
+        "log_file": result["log_file"]
+    })

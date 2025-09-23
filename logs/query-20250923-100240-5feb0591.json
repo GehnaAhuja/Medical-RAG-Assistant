@@ -1,0 +1,78 @@
+{
+  "query": "When is bariatric surgery recommended for obesity?",
+  "retrieved": [
+    {
+      "score": 1.15,
+      "source_type": "docs",
+      "doc_id": "obesity_guidelines.md",
+      "chunk_id": "obesity_guidelines.md::c2",
+      "rerank_score": 0.43593281507492065
+    },
+    {
+      "score": 0.4336275126485037,
+      "source_type": "blogs",
+      "doc_id": "obesity_trends.md",
+      "chunk_id": "obesity_trends.md::c0",
+      "rerank_score": -7.014399528503418
+    },
+    {
+      "score": 0.6031669604399286,
+      "source_type": "docs",
+      "doc_id": "obesity_guidelines.md",
+      "chunk_id": "obesity_guidelines.md::c0",
+      "rerank_score": -8.052007675170898
+    },
+    {
+      "score": 0.31126941416690135,
+      "source_type": "blogs",
+      "doc_id": "new_diabetes_drugs.md",
+      "chunk_id": "new_diabetes_drugs.md::c0",
+      "rerank_score": -10.825553894042969
+    },
+    {
+      "score": 0.5443121896120331,
+      "source_type": "docs",
+      "doc_id": "diabetes_guidelines.md",
+      "chunk_id": "diabetes_guidelines.md::c0",
+      "rerank_score": -10.865896224975586
+    }
+  ],
+  "contradictions": [
+    [
+      2,
+      4,
+      "contradiction"
+    ]
+  ],
+  "resolution": {
+    "decisions": [
+      {
+        "a": "obesity_guidelines.md::c0",
+        "b": "diabetes_guidelines.md::c0",
+        "preferred": "obesity_guidelines.md::c0",
+        "discarded": "diabetes_guidelines.md::c0",
+        "reason": "Preferred docs over docs"
+      }
+    ]
+  },
+  "answer": {
+    "response": "BMI  40, or  35 with comorbidities\n\n⚠️ Disclaimer: This is not medical advice.",
+    "citations": [
+      {
+        "source": "docs",
+        "doc": "obesity_guidelines.md",
+        "chunk": "obesity_guidelines.md::c2"
+      },
+      {
+        "source": "blogs",
+        "doc": "obesity_trends.md",
+        "chunk": "obesity_trends.md::c0"
+      },
+      {
+        "source": "docs",
+        "doc": "obesity_guidelines.md",
+        "chunk": "obesity_guidelines.md::c0"
+      }
+    ]
+  }
+}
